@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		254BCBE4208A6D440079915B /* ProdutosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BCBE3208A6D440079915B /* ProdutosTableViewController.swift */; };
+		254BCBE6208A6D750079915B /* EstadosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BCBE5208A6D750079915B /* EstadosTableViewController.swift */; };
+		254BCBE8208A6E1C0079915B /* VisualizarProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BCBE7208A6E1C0079915B /* VisualizarProdutosViewController.swift */; };
+		254BCBEA208A6E700079915B /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BCBE9208A6E700079915B /* AddEditViewController.swift */; };
+		254BCBEC208A6F250079915B /* ProdutosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BCBEB208A6F250079915B /* ProdutosTableViewCell.swift */; };
 		257C8B462087B23C00946E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8B452087B23C00946E1F /* AppDelegate.swift */; };
 		257C8B482087B23C00946E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8B472087B23C00946E1F /* ViewController.swift */; };
 		257C8B4B2087B23C00946E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257C8B492087B23C00946E1F /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254BCBE3208A6D440079915B /* ProdutosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutosTableViewController.swift; sourceTree = "<group>"; };
+		254BCBE5208A6D750079915B /* EstadosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadosTableViewController.swift; sourceTree = "<group>"; };
+		254BCBE7208A6E1C0079915B /* VisualizarProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarProdutosViewController.swift; sourceTree = "<group>"; };
+		254BCBE9208A6E700079915B /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
+		254BCBEB208A6F250079915B /* ProdutosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutosTableViewCell.swift; sourceTree = "<group>"; };
 		257C8B422087B23C00946E1F /* JoseSiqueira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoseSiqueira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257C8B452087B23C00946E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		257C8B472087B23C00946E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +66,11 @@
 		257C8B442087B23C00946E1F /* JoseSiqueira */ = {
 			isa = PBXGroup;
 			children = (
+				254BCBEB208A6F250079915B /* ProdutosTableViewCell.swift */,
+				254BCBE7208A6E1C0079915B /* VisualizarProdutosViewController.swift */,
+				254BCBE9208A6E700079915B /* AddEditViewController.swift */,
+				254BCBE3208A6D440079915B /* ProdutosTableViewController.swift */,
+				254BCBE5208A6D750079915B /* EstadosTableViewController.swift */,
 				257C8B452087B23C00946E1F /* AppDelegate.swift */,
 				257C8B472087B23C00946E1F /* ViewController.swift */,
 				257C8B492087B23C00946E1F /* Main.storyboard */,
@@ -139,7 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				257C8B482087B23C00946E1F /* ViewController.swift in Sources */,
+				254BCBEC208A6F250079915B /* ProdutosTableViewCell.swift in Sources */,
+				254BCBEA208A6E700079915B /* AddEditViewController.swift in Sources */,
+				254BCBE4208A6D440079915B /* ProdutosTableViewController.swift in Sources */,
+				254BCBE8208A6E1C0079915B /* VisualizarProdutosViewController.swift in Sources */,
 				257C8B4E2087B23C00946E1F /* JoseSiqueira.xcdatamodeld in Sources */,
+				254BCBE6208A6D750079915B /* EstadosTableViewController.swift in Sources */,
 				257C8B462087B23C00946E1F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FZ6LVQ87Q2;
 				INFOPLIST_FILE = JoseSiqueira/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FZ6LVQ87Q2;
 				INFOPLIST_FILE = JoseSiqueira/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
