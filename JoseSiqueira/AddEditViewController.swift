@@ -13,31 +13,65 @@ class AddEditViewController: UIViewController {
     @IBOutlet var tfTitle: UITextField!
     @IBOutlet var tfValor: UITextField!
     @IBOutlet var ivCover: UIImageView!
+    @IBOutlet var btAddEdit: UIButton!
     
-    
+    var produto: Produto!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+    }
+
+    @IBAction func addEditProduto(_ sender: UIButton) {
+        if produto == nil {
+            produto = Produto(context: context)
+        }
+        
+        produto.title = tfTitle.text
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription )
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addEditCover(_ sender: UIButton) {
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

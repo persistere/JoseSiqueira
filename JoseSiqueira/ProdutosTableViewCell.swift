@@ -24,5 +24,15 @@ class ProdutosTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func prepare(with produto: Produto) {
+        lbTitle.text = produto.title ?? ""
+        
+        if let image = produto.cover as? UIImage {
+            ivCover.image = image
+        } else {
+            ivCover.image = UIImage(named: "noCover")
+        }
+    }
 
 }
