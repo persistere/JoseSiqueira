@@ -15,15 +15,25 @@ class VisualizarProdutosViewController: UIViewController {
     @IBOutlet var ivCover: UIImageView!
     
     
+    var produto: Produto!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lbTitle.text = produto.title
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddEditViewController
+        vc.produto = produto
     }
     
 

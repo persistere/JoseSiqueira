@@ -22,7 +22,23 @@ class ProdutosTableViewController: UITableViewController {
         loadProdutos()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "produtoSegue" {
+            let vc = segue.destination as! VisualizarProdutosViewController
+            
+            if let produtos = fetchedResultController.fetchedObjects {
+                vc.produto = produtos[tableView.indexPathForSelectedRow!.row]
+            }
+            
+            
+        }
+        
+        if segue.identifier == "novoProdutoSegue" {
+            
+        }
+
+    }
     
     func loadProdutos() {
         let fetchRequest: NSFetchRequest<Produto> = Produto.fetchRequest()
