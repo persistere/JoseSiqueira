@@ -17,7 +17,8 @@ class ProdutosTableViewController: UITableViewController {
         super.viewDidLoad()
         
         label.text = "Não a produtos cadastrados"
-        
+        label.textAlignment = .center
+
         loadProdutos()
     }
     
@@ -79,17 +80,15 @@ class ProdutosTableViewController: UITableViewController {
      }
      */
     
-    /*
+    
      // Override to support editing the table view.
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+        if editingStyle == .delete {
+            guard let produto = fetchedResultController.fetchedObjects?[indexPath.row] else {return}
+            context.delete(produto)
+        }
+    }
+    
     
     /*
      // Override to support rearranging the table view.
@@ -118,7 +117,25 @@ class ProdutosTableViewController: UITableViewController {
 
 
 extension ProdutosTableViewController: NSFetchedResultsControllerDelegate {
+    
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//
+//        switch type {
+//            case .delete:
+//                if let indexPath = indexPath {
+//                    tableView.deleteRows(at: [IndexPath], with: .fade)
+//                }
+//                break
+//            default:
+//                tableView.reloadData()
+//        }
+//    }
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
+    
+    
+    
+    
 }
