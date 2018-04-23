@@ -42,6 +42,9 @@ class AddEditViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func btnSairTeclado(_ sender: Any) {
+        self.resignFirstResponder()
+    }
 }
 
 
