@@ -37,21 +37,23 @@ class EstadosTableViewController: UITableViewController {
         let alert = UIAlertController(title: title + "Estado", message: nil, preferredStyle: .alert )
         //var formatter = NumberFormatter()
         
-        alert.addTextField {(textField) in textField.placeholder = "Nome do Estado"
+        alert.addTextField {
+            (textField) in textField.placeholder = "Nome do Estado"
             if let name = estado?.title {
                 textField.text = name
             }
         }
         
         
-        alert.addTextField {(textField) in textField.placeholder = "Imposto"
+        alert.addTextField {
+            (textField) in textField.placeholder = "Imposto"
             if let name = estado?.title {
                 textField.text = name
             }
         }
         
-        alert.addAction(UIAlertAction(title: title, style: .default, handler: {(action) in
-            let estado = estado ?? Estado(context: self.context)
+        alert.addAction(UIAlertAction(title: title, style: .default, handler: {
+            (action) in let estado = estado ?? Estado(context: self.context)
             estado.title = alert.textFields?.first?.text
             do {
                 try self.context.save()

@@ -14,12 +14,27 @@ class AddEditViewController: UIViewController {
     @IBOutlet var tfValor: UITextField!
     @IBOutlet var ivCover: UIImageView!
     @IBOutlet var btAddEdit: UIButton!
+    @IBOutlet var tfEstado: UITextField!
     
     var produto: Produto!
-//    var formatter = NumberFormatter()
+    
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        return pickerView
+    }()
+    
+    var estadosManager = EstadosManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfEstado.inputView = pickerView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        estadosManager.loadEstados(with: context)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +73,21 @@ class AddEditViewController: UIViewController {
     }
 }
 
+
+extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return estadosManager.estados.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent: Int) -> String? {
+        let estados = estadosManager.estados[row]
+        return estados.title
+    }
+}
 
 
 

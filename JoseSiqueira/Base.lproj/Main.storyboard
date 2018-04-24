@@ -251,6 +251,7 @@
                     <connections>
                         <outlet property="btAddEdit" destination="DAb-4V-9dd" id="QxO-xs-5CW"/>
                         <outlet property="ivCover" destination="sq8-U5-QkU" id="LC3-zg-9Lw"/>
+                        <outlet property="tfEstado" destination="5cC-bk-6cd" id="GET-I8-F04"/>
                         <outlet property="tfTitle" destination="Ogd-up-B2A" id="zKR-ly-Vo6"/>
                         <outlet property="tfValor" destination="LVI-Vc-24A" id="tdx-dv-XuM"/>
                     </connections>
@@ -332,7 +333,7 @@
             </objects>
             <point key="canvasLocation" x="4151" y="205"/>
         </scene>
-        <!--Estados USA-->
+        <!--Imposto por estado-->
         <scene sceneID="fY4-OZ-buR">
             <objects>
                 <tableViewController id="8DX-CM-xN5" customClass="EstadosTableViewController" customModule="JoseSiqueira" customModuleProvider="target" sceneMemberID="viewController">
@@ -369,7 +370,7 @@
                             <outlet property="delegate" destination="8DX-CM-xN5" id="BMi-WU-fts"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Estados USA" id="Kvv-gA-jea">
+                    <navigationItem key="navigationItem" title="Imposto por estado" id="Kvv-gA-jea">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="suE-1o-p9y">
                             <connections>
                                 <action selector="addEstados:" destination="8DX-CM-xN5" id="tlh-kI-Usn"/>
