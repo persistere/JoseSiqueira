@@ -19,6 +19,7 @@
 		257C8B502087B24000946E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257C8B4F2087B24000946E1F /* Assets.xcassets */; };
 		257C8B532087B24000946E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257C8B512087B24000946E1F /* LaunchScreen.storyboard */; };
 		25887EDF208D3C7E004E201F /* ViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25887EDE208D3C7E004E201F /* ViewController+CoreData.swift */; };
+		25E0B98D208FD26B006FF4C9 /* EstadosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		257C8B522087B24000946E1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		257C8B542087B24000946E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25887EDE208D3C7E004E201F /* ViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreData.swift"; sourceTree = "<group>"; };
+		25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadosManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				25887EDE208D3C7E004E201F /* ViewController+CoreData.swift */,
 				254BCBE3208A6D440079915B /* ProdutosTableViewController.swift */,
 				254BCBE5208A6D750079915B /* EstadosTableViewController.swift */,
+				25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */,
 				257C8B452087B23C00946E1F /* AppDelegate.swift */,
 				257C8B472087B23C00946E1F /* ViewController.swift */,
 				257C8B492087B23C00946E1F /* Main.storyboard */,
@@ -163,6 +166,7 @@
 				254BCBE8208A6E1C0079915B /* VisualizarProdutosViewController.swift in Sources */,
 				25887EDF208D3C7E004E201F /* ViewController+CoreData.swift in Sources */,
 				257C8B4E2087B23C00946E1F /* JoseSiqueira.xcdatamodeld in Sources */,
+				25E0B98D208FD26B006FF4C9 /* EstadosManager.swift in Sources */,
 				254BCBE6208A6D750079915B /* EstadosTableViewController.swift in Sources */,
 				257C8B462087B23C00946E1F /* AppDelegate.swift in Sources */,
 			);

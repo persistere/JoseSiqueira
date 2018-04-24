@@ -16,6 +16,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet var btAddEdit: UIButton!
     
     var produto: Produto!
+//    var formatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,17 @@ class AddEditViewController: UIViewController {
     }
     
     @IBAction func btnSairTeclado(_ sender: Any) {
-        self.resignFirstResponder()
+        //self.resignFirstResponder()
+        view.endEditing(true)
+    }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let double = formatter.number(from: textfield.text!)?.doubleValue else { return }
+//        print(double)
+//    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 

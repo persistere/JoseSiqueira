@@ -10,14 +10,16 @@ import UIKit
 
 class EstadosTableViewController: UITableViewController {
 
+    var estadosManager = EstadosManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadEstados()
+    }
+    
+    func loadEstados() {
+        estadosManager.loadEstados(with: context)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,28 +28,63 @@ class EstadosTableViewController: UITableViewController {
     }
 
     @IBAction func addEstados(_ sender: UIBarButtonItem) {
+        showAlert(with: nil)
     }
+    
+    func showAlert(with estado: Estado? ) {
+        
+        let title = estado == nil ? "Adicionar" : "Editar"
+        let alert = UIAlertController(title: title + "Estado", message: nil, preferredStyle: .alert )
+        //var formatter = NumberFormatter()
+        
+        alert.addTextField {(textField) in textField.placeholder = "Nome do Estado"
+            if let name = estado?.title {
+                textField.text = name
+            }
+        }
+        
+        
+        alert.addTextField {(textField) in textField.placeholder = "Imposto"
+            if let name = estado?.title {
+                textField.text = name
+            }
+        }
+        
+        alert.addAction(UIAlertAction(title: title, style: .default, handler: {(action) in
+            let estado = estado ?? Estado(context: self.context)
+            estado.title = alert.textFields?.first?.text
+            do {
+                try self.context.save()
+                self.loadEstados()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.view.tintColor = UIColor(named: "second")
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return estadosManager.estados.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        // Configure the cell...
+        let estado = estadosManager.estados[indexPath.row]
+        cell.textLabel?.text = estado.title
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
