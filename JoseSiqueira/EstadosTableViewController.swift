@@ -82,6 +82,16 @@ class EstadosTableViewController: UITableViewController {
         showAlert(with: estado)
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+        forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            estadosManager.deleteEstados(index: indexPath.row, context: context)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

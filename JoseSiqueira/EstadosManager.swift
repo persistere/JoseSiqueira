@@ -31,6 +31,7 @@ class EstadosManager {
         context.delete(estado)
         do {
             try context.save()
+            estados.remove(at: index)
         } catch {
             print(error.localizedDescription)
         }
