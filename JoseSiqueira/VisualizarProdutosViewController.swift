@@ -24,6 +24,13 @@ class VisualizarProdutosViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         lbTitle.text = produto.title
+        
+        
+        if let image = produto.cover as? UIImage {
+            ivCover.image = image
+        } else {
+            ivCover.image = UIImage(named: "noCover")
+        }
     }
 
     override func didReceiveMemoryWarning() {
