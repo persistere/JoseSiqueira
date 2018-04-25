@@ -33,7 +33,7 @@ class EstadosTableViewController: UITableViewController {
     
     func showAlert(with estado: Estado? ) {
         
-        let title = estado == nil ? "Adicionar" : "Editar"
+        let title = estado == nil ? "Adicionar " : "Editar "
         let alert = UIAlertController(title: title + "Estado", message: nil, preferredStyle: .alert )
         //var formatter = NumberFormatter()
         
@@ -75,6 +75,12 @@ class EstadosTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return estadosManager.estados.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let estado = estadosManager.estados[indexPath.row]
+        showAlert(with: estado)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 
     
