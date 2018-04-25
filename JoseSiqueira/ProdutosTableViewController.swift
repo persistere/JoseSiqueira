@@ -16,7 +16,7 @@ class ProdutosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = "Não a produtos cadastrados"
+        label.text = "Sua lista está vazia"
         label.textAlignment = .center
 
         loadProdutos()
