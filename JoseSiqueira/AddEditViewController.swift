@@ -70,6 +70,13 @@ class AddEditViewController: UIViewController {
         
         produto.title = tfTitle.text
         
+        
+        if !tfEstado.text!.isEmpty {
+            let estado = estadosManager.estados[pickerView.selectedRow(inComponent: 0)]
+            produto.estado = estado
+        }
+        
+        
         do {
             try context.save()
         } catch {
