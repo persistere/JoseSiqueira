@@ -22,6 +22,7 @@ class AddEditViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
+        pickerView.backgroundColor = .white
         return pickerView
     }()
     
@@ -29,7 +30,27 @@ class AddEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        toolbar.tintColor = UIColor(named: "main")
+        
+        let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        let btFlexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolbar.items = [btCancel, btFlexibleSpace, btDone]
+        
         tfEstado.inputView = pickerView
+        tfEstado.inputAccessoryView = toolbar
+    }
+    
+    @objc func cancel() {
+        tfEstado.resignFirstResponder()
+    }
+    
+    @objc func done() {
+        tfEstado.text = estadosManager.estados[pickerView.selectedRow(inComponent: 0)].title
+        cancel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
