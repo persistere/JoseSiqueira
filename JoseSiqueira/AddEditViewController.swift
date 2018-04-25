@@ -15,6 +15,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet var ivCover: UIImageView!
     @IBOutlet var btAddEdit: UIButton!
     @IBOutlet var tfEstado: UITextField!
+    @IBOutlet var btCover: UIButton!
     
     var produto: Produto!
     
@@ -63,6 +64,43 @@ class AddEditViewController: UIViewController {
         
     }
 
+    @IBAction func addEditCover(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Selecionar poster", message: "De onde você quer escolher o poster?", preferredStyle: .actionSheet)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Câmera", style: .default, handler: { (action: UIAlertAction) in
+                self.selectPicture(sourceType: .camera)
+            })
+            alert.addAction(cameraAction)
+        }
+        
+        let libraryAction = UIAlertAction(title: "Biblioteca de fotos", style: .default) { (action: UIAlertAction) in
+            self.selectPicture(sourceType: .photoLibrary)
+        }
+        alert.addAction(libraryAction)
+        
+        let photosAction = UIAlertAction(title: "Álbum de fotos", style: .default) { (action: UIAlertAction) in
+            self.selectPicture(sourceType: .savedPhotosAlbum)
+        }
+        alert.addAction(photosAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func selectPicture(sourceType: UIImagePickerControllerSourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = self
+        imagePicker.navigationBar.tintColor = UIColor(named: "main")
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    
     @IBAction func addEditProduto(_ sender: UIButton) {
         if produto == nil {
             produto = Produto(context: context)
@@ -117,6 +155,16 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
+
+extension AddEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        ivCover.image = image
+        btCover.setTitle(nil, for: .normal)
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 
 
