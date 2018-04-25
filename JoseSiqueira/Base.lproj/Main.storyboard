@@ -463,7 +463,7 @@
             </objects>
             <point key="canvasLocation" x="3342" y="-1414"/>
         </scene>
-        <!--Total Compra-->
+        <!--Total da Compra-->
         <scene sceneID="FTf-iw-gLj">
             <objects>
                 <viewController id="a5a-Ld-q5o" sceneMemberID="viewController">
@@ -505,7 +505,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="J2Z-IU-Psu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Total Compra" id="hmn-jM-D5O"/>
+                    <navigationItem key="navigationItem" title="Total da Compra" id="hmn-jM-D5O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOg-7v-yyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

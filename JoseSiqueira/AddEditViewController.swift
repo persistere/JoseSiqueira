@@ -18,6 +18,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet var btCover: UIButton!
     
     var produto: Produto!
+    //var formatter = NumberFormatter()
     
     lazy var pickerView: UIPickerView = {
         let pickerView = UIPickerView()
@@ -32,6 +33,29 @@ class AddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if produto != nil {
+            title = "Editar Produto"
+            btAddEdit.setTitle("ALTERAR", for: .normal)
+            tfTitle.text = produto.title
+            //guard case tfValor.text = formatter.number(from: produto.valor)?.doubleValue else { return }
+            
+            if let estado = produto.estado, let index = estadosManager.estados.index(of: estado) {
+                tfEstado.text = estado.title
+                pickerView.selectRow(index, inComponent: 0, animated: false)
+            }
+            
+            ivCover.image = produto.cover as? UIImage
+            
+            if produto.cover != nil {
+                btCover.setTitle(nil, for: .normal)
+            }
+            
+        }
+        
+        prepareEstadosTextField()
+    }
+    
+    func prepareEstadosTextField() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         toolbar.tintColor = UIColor(named: "main")
         
