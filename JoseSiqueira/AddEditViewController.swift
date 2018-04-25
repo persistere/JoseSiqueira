@@ -39,6 +39,8 @@ class AddEditViewController: UIViewController {
             tfTitle.text = produto.title
             //guard case tfValor.text = formatter.number(from: produto.valor)?.doubleValue else { return }
             
+            
+            
             if let estado = produto.estado, let index = estadosManager.estados.index(of: estado) {
                 tfEstado.text = estado.title
                 pickerView.selectRow(index, inComponent: 0, animated: false)

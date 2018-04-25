@@ -134,22 +134,23 @@ class ProdutosTableViewController: UITableViewController {
 
 extension ProdutosTableViewController: NSFetchedResultsControllerDelegate {
     
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//
-//        switch type {
-//            case .delete:
-//                if let indexPath = indexPath {
-//                    tableView.deleteRows(at: [IndexPath], with: .fade)
-//                }
-//                break
-//            default:
-//                tableView.reloadData()
-//        }
-//    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.reloadData()
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject:
+        Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+
+        switch type {
+            case .delete:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+                break
+            default:
+                tableView.reloadData()
+        }
     }
+    
+//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        tableView.reloadData()
+//    }
     
     
     
