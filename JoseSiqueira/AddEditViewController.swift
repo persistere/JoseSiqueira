@@ -114,6 +114,8 @@ class AddEditViewController: UIViewController {
             produto.estado = estado
         }
         
+        produto.cover = ivCover.image
+        
         
         do {
             try context.save()
