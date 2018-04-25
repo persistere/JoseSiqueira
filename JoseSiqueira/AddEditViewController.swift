@@ -63,9 +63,9 @@ class AddEditViewController: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
-
+    
+    
     @IBAction func addEditCover(_ sender: UIButton) {
-        
         let alert = UIAlertController(title: "Selecionar poster", message: "De onde você quer escolher o poster?", preferredStyle: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -88,8 +88,8 @@ class AddEditViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
-        
     }
+    
     
     func selectPicture(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
@@ -100,7 +100,7 @@ class AddEditViewController: UIViewController {
     }
     
     
-    
+
     @IBAction func addEditProduto(_ sender: UIButton) {
         if produto == nil {
             produto = Produto(context: context)

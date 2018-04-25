@@ -223,12 +223,12 @@
                                     <action selector="addEditProduto:" destination="a6n-Zf-ur8" eventType="touchUpInside" id="JJ7-ZY-Jl3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tal-AE-9R8">
-                                <rect key="frame" x="123" y="372" width="123" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pn-pC-xeG">
+                                <rect key="frame" x="123" y="286" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Adicionar imagem"/>
+                                <state key="normal" title="Selecionar Foto"/>
                                 <connections>
-                                    <action selector="addEditCover:" destination="a6n-Zf-ur8" eventType="touchUpInside" id="J06-fn-gmm"/>
+                                    <action selector="addEditCover:" destination="a6n-Zf-ur8" eventType="touchUpInside" id="QXo-E2-aTB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -258,12 +258,11 @@
                     </view>
                     <connections>
                         <outlet property="btAddEdit" destination="DAb-4V-9dd" id="QxO-xs-5CW"/>
-                        <outlet property="btCover" destination="tal-AE-9R8" id="h7r-ur-B1G"/>
+                        <outlet property="btCover" destination="5Pn-pC-xeG" id="KX7-50-1Qe"/>
                         <outlet property="ivCover" destination="sq8-U5-QkU" id="LC3-zg-9Lw"/>
                         <outlet property="tfEstado" destination="5cC-bk-6cd" id="GET-I8-F04"/>
                         <outlet property="tfTitle" destination="Ogd-up-B2A" id="zKR-ly-Vo6"/>
                         <outlet property="tfValor" destination="LVI-Vc-24A" id="tdx-dv-XuM"/>
-                        <outletCollection property="addEditCover" destination="tal-AE-9R8" collectionClass="NSMutableArray" id="BeK-pT-63c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U90-hc-J0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
