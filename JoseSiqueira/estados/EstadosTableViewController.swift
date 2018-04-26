@@ -35,7 +35,6 @@ class EstadosTableViewController: UITableViewController {
         
         let title = estado == nil ? "Adicionar " : "Editar "
         let alert = UIAlertController(title: title + "Estado", message: nil, preferredStyle: .alert )
-        //var formatter = NumberFormatter()
         
         alert.addTextField {
             (textField) in textField.placeholder = "Nome do Estado"
@@ -66,7 +65,6 @@ class EstadosTableViewController: UITableViewController {
         alert.view.tintColor = UIColor(named: "second")
         present(alert, animated: true, completion: nil)
         
-        
     }
     
     // MARK: - Table view data source
@@ -91,7 +89,6 @@ class EstadosTableViewController: UITableViewController {
         }
         
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

@@ -44,6 +44,7 @@ class AddEditViewController: UIViewController {
 
             if let estado = produto.estado, let index = estadosManager.estados.index(of: estado) {
                 tfEstado.text = estado.title
+                
                 pickerView.selectRow(index, inComponent: 0, animated: false)
             }
 

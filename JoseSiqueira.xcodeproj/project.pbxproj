@@ -13,7 +13,6 @@
 		254BCBEA208A6E700079915B /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BCBE9208A6E700079915B /* AddEditViewController.swift */; };
 		254BCBEC208A6F250079915B /* ProdutosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254BCBEB208A6F250079915B /* ProdutosTableViewCell.swift */; };
 		257C8B462087B23C00946E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8B452087B23C00946E1F /* AppDelegate.swift */; };
-		257C8B482087B23C00946E1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C8B472087B23C00946E1F /* ViewController.swift */; };
 		257C8B4B2087B23C00946E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257C8B492087B23C00946E1F /* Main.storyboard */; };
 		257C8B4E2087B23C00946E1F /* JoseSiqueira.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 257C8B4C2087B23C00946E1F /* JoseSiqueira.xcdatamodeld */; };
 		257C8B502087B24000946E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257C8B4F2087B24000946E1F /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 		254BCBEB208A6F250079915B /* ProdutosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutosTableViewCell.swift; sourceTree = "<group>"; };
 		257C8B422087B23C00946E1F /* JoseSiqueira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoseSiqueira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257C8B452087B23C00946E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		257C8B472087B23C00946E1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		257C8B4A2087B23C00946E1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		257C8B4D2087B23C00946E1F /* JoseSiqueira.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JoseSiqueira.xcdatamodel; sourceTree = "<group>"; };
 		257C8B4F2087B24000946E1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,13 +76,11 @@
 		257C8B442087B23C00946E1F /* JoseSiqueira */ = {
 			isa = PBXGroup;
 			children = (
+				25E0B99820929752006FF4C9 /* singletons */,
 				25E0B99720928BC5006FF4C9 /* estados */,
 				25E0B99620928B31006FF4C9 /* produtos */,
 				254BCBE9208A6E700079915B /* AddEditViewController.swift */,
-				25887EDE208D3C7E004E201F /* ViewController+CoreData.swift */,
-				25E0B99420926A1A006FF4C9 /* UIViewController+CalculoCompras.swift */,
 				257C8B452087B23C00946E1F /* AppDelegate.swift */,
-				257C8B472087B23C00946E1F /* ViewController.swift */,
 				257C8B492087B23C00946E1F /* Main.storyboard */,
 				25E0B98E2092599D006FF4C9 /* AjustesViewController.swift */,
 				25E0B99020925C0C006FF4C9 /* TotalCompraViewController.swift */,
@@ -114,6 +110,15 @@
 				25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */,
 			);
 			path = estados;
+			sourceTree = "<group>";
+		};
+		25E0B99820929752006FF4C9 /* singletons */ = {
+			isa = PBXGroup;
+			children = (
+				25887EDE208D3C7E004E201F /* ViewController+CoreData.swift */,
+				25E0B99420926A1A006FF4C9 /* UIViewController+CalculoCompras.swift */,
+			);
+			path = singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +193,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E0B98F2092599D006FF4C9 /* AjustesViewController.swift in Sources */,
-				257C8B482087B23C00946E1F /* ViewController.swift in Sources */,
 				254BCBEC208A6F250079915B /* ProdutosTableViewCell.swift in Sources */,
 				25E0B99320925F2D006FF4C9 /* CalculoCompras.swift in Sources */,
 				254BCBEA208A6E700079915B /* AddEditViewController.swift in Sources */,
