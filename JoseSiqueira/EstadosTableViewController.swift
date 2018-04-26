@@ -44,11 +44,10 @@ class EstadosTableViewController: UITableViewController {
             }
         }
         
-        
         alert.addTextField {
             (textField) in textField.placeholder = "Imposto"
-            if let name = estado?.title {
-                textField.text = name
+            if let tax = estado?.tax {
+                textField.text = String(tax)
             }
         }
         
