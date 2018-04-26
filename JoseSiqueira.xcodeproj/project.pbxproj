@@ -76,9 +76,9 @@
 		257C8B442087B23C00946E1F /* JoseSiqueira */ = {
 			isa = PBXGroup;
 			children = (
-				25E0B99820929752006FF4C9 /* singletons */,
-				25E0B99720928BC5006FF4C9 /* estados */,
-				25E0B99620928B31006FF4C9 /* produtos */,
+				25E0B99820929752006FF4C9 /* Singletons */,
+				25E0B99720928BC5006FF4C9 /* Estados */,
+				25E0B99620928B31006FF4C9 /* Produtos */,
 				254BCBE9208A6E700079915B /* AddEditViewController.swift */,
 				257C8B452087B23C00946E1F /* AppDelegate.swift */,
 				257C8B492087B23C00946E1F /* Main.storyboard */,
@@ -93,32 +93,32 @@
 			path = JoseSiqueira;
 			sourceTree = "<group>";
 		};
-		25E0B99620928B31006FF4C9 /* produtos */ = {
+		25E0B99620928B31006FF4C9 /* Produtos */ = {
 			isa = PBXGroup;
 			children = (
 				254BCBE7208A6E1C0079915B /* VisualizarProdutosViewController.swift */,
 				254BCBE3208A6D440079915B /* ProdutosTableViewController.swift */,
 				254BCBEB208A6F250079915B /* ProdutosTableViewCell.swift */,
 			);
-			path = produtos;
+			path = Produtos;
 			sourceTree = "<group>";
 		};
-		25E0B99720928BC5006FF4C9 /* estados */ = {
+		25E0B99720928BC5006FF4C9 /* Estados */ = {
 			isa = PBXGroup;
 			children = (
 				254BCBE5208A6D750079915B /* EstadosTableViewController.swift */,
 				25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */,
 			);
-			path = estados;
+			path = Estados;
 			sourceTree = "<group>";
 		};
-		25E0B99820929752006FF4C9 /* singletons */ = {
+		25E0B99820929752006FF4C9 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
 				25887EDE208D3C7E004E201F /* ViewController+CoreData.swift */,
 				25E0B99420926A1A006FF4C9 /* UIViewController+CalculoCompras.swift */,
 			);
-			path = singletons;
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
