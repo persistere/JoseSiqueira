@@ -22,6 +22,8 @@
 		25E0B98D208FD26B006FF4C9 /* EstadosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */; };
 		25E0B98F2092599D006FF4C9 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0B98E2092599D006FF4C9 /* AjustesViewController.swift */; };
 		25E0B99120925C0C006FF4C9 /* TotalCompraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0B99020925C0C006FF4C9 /* TotalCompraViewController.swift */; };
+		25E0B99320925F2D006FF4C9 /* CalculoCompras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0B99220925F2D006FF4C9 /* CalculoCompras.swift */; };
+		25E0B99520926A1A006FF4C9 /* UIViewController+CalculoCompras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0B99420926A1A006FF4C9 /* UIViewController+CalculoCompras.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstadosManager.swift; sourceTree = "<group>"; };
 		25E0B98E2092599D006FF4C9 /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
 		25E0B99020925C0C006FF4C9 /* TotalCompraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCompraViewController.swift; sourceTree = "<group>"; };
+		25E0B99220925F2D006FF4C9 /* CalculoCompras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoCompras.swift; sourceTree = "<group>"; };
+		25E0B99420926A1A006FF4C9 /* UIViewController+CalculoCompras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CalculoCompras.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 				254BCBE7208A6E1C0079915B /* VisualizarProdutosViewController.swift */,
 				254BCBE9208A6E700079915B /* AddEditViewController.swift */,
 				25887EDE208D3C7E004E201F /* ViewController+CoreData.swift */,
+				25E0B99420926A1A006FF4C9 /* UIViewController+CalculoCompras.swift */,
 				254BCBE3208A6D440079915B /* ProdutosTableViewController.swift */,
 				254BCBE5208A6D750079915B /* EstadosTableViewController.swift */,
 				25E0B98C208FD26B006FF4C9 /* EstadosManager.swift */,
@@ -86,6 +91,7 @@
 				257C8B492087B23C00946E1F /* Main.storyboard */,
 				25E0B98E2092599D006FF4C9 /* AjustesViewController.swift */,
 				25E0B99020925C0C006FF4C9 /* TotalCompraViewController.swift */,
+				25E0B99220925F2D006FF4C9 /* CalculoCompras.swift */,
 				257C8B4F2087B24000946E1F /* Assets.xcassets */,
 				257C8B512087B24000946E1F /* LaunchScreen.storyboard */,
 				257C8B542087B24000946E1F /* Info.plist */,
@@ -168,6 +174,7 @@
 				25E0B98F2092599D006FF4C9 /* AjustesViewController.swift in Sources */,
 				257C8B482087B23C00946E1F /* ViewController.swift in Sources */,
 				254BCBEC208A6F250079915B /* ProdutosTableViewCell.swift in Sources */,
+				25E0B99320925F2D006FF4C9 /* CalculoCompras.swift in Sources */,
 				254BCBEA208A6E700079915B /* AddEditViewController.swift in Sources */,
 				254BCBE4208A6D440079915B /* ProdutosTableViewController.swift in Sources */,
 				254BCBE8208A6E1C0079915B /* VisualizarProdutosViewController.swift in Sources */,
@@ -176,6 +183,7 @@
 				257C8B4E2087B23C00946E1F /* JoseSiqueira.xcdatamodeld in Sources */,
 				25E0B98D208FD26B006FF4C9 /* EstadosManager.swift in Sources */,
 				254BCBE6208A6D750079915B /* EstadosTableViewController.swift in Sources */,
+				25E0B99520926A1A006FF4C9 /* UIViewController+CalculoCompras.swift in Sources */,
 				257C8B462087B23C00946E1F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
