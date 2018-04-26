@@ -37,7 +37,8 @@ class AddEditViewController: UIViewController {
             title = "Editar Produto"
             btAddEdit.setTitle("ALTERAR", for: .normal)
             tfTitle.text = produto.title
-            //guard case tfValor.text = formatter.number(from: produto.valor)?.doubleValue else { return }
+            //guard case tfValor.int = formatter.number(from: produto.valor)?.doubleValue else { return }
+            tfValor.text = String(format: "%.2f",produto.valor)
             
             
             

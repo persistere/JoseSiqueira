@@ -12,6 +12,8 @@ class ProdutosTableViewCell: UITableViewCell {
 
     @IBOutlet var ivCover: UIImageView!
     @IBOutlet var lbTitle: UILabel!
+    @IBOutlet var lbEstado: UILabel!
+    @IBOutlet var lbValor: UILabel!
     
     
     override func awakeFromNib() {
@@ -27,6 +29,7 @@ class ProdutosTableViewCell: UITableViewCell {
     
     func prepare(with produto: Produto) {
         lbTitle.text = produto.title ?? ""
+        lbValor.text = String(format: "%.2f",produto.valor)
         
         if let image = produto.cover as? UIImage {
             ivCover.image = image
@@ -34,5 +37,6 @@ class ProdutosTableViewCell: UITableViewCell {
             ivCover.image = UIImage(named: "noCover")
         }
     }
-
+    
+    
 }
