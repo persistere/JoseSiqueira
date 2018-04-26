@@ -29,7 +29,7 @@ class ProdutosTableViewCell: UITableViewCell {
     
     func prepare(with produto: Produto) {
         lbTitle.text = produto.title ?? ""
-        lbValor.text = String(format: "%.2f",produto.valor)
+        lbValor.text = String(produto.valor)
         
         if let image = produto.cover as? UIImage {
             ivCover.image = image

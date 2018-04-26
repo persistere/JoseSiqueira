@@ -18,7 +18,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet var btCover: UIButton!
     
     var produto: Produto!
-    //var formatter = NumberFormatter()
+    var formatter = NumberFormatter()
     
     lazy var pickerView: UIPickerView = {
         let pickerView = UIPickerView()
@@ -36,23 +36,20 @@ class AddEditViewController: UIViewController {
         if produto != nil {
             title = "Editar Produto"
             btAddEdit.setTitle("ALTERAR", for: .normal)
+            
             tfTitle.text = produto.title
-            //guard case tfValor.int = formatter.number(from: produto.valor)?.doubleValue else { return }
-            tfValor.text = String(format: "%.2f",produto.valor)
-            
-            
-            
+            tfValor.text = String(produto.valor)
+ 
+            ivCover.image = produto.cover as? UIImage
+
             if let estado = produto.estado, let index = estadosManager.estados.index(of: estado) {
                 tfEstado.text = estado.title
                 pickerView.selectRow(index, inComponent: 0, animated: false)
             }
-            
-            ivCover.image = produto.cover as? UIImage
-            
+
             if produto.cover != nil {
                 btCover.setTitle(nil, for: .normal)
             }
-            
         }
         
         prepareEstadosTextField()
@@ -129,12 +126,15 @@ class AddEditViewController: UIViewController {
     
 
     @IBAction func addEditProduto(_ sender: UIButton) {
+
         if produto == nil {
             produto = Produto(context: context)
         }
         
         produto.title = tfTitle.text
         
+        guard let valor = formatter.number(from: tfValor.text!)?.doubleValue else { return }
+        produto.valor =  valor
         
         if !tfEstado.text!.isEmpty {
             let estado = estadosManager.estados[pickerView.selectedRow(inComponent: 0)]
@@ -154,14 +154,8 @@ class AddEditViewController: UIViewController {
     }
     
     @IBAction func btnSairTeclado(_ sender: Any) {
-        //self.resignFirstResponder()
         view.endEditing(true)
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let double = formatter.number(from: textfield.text!)?.doubleValue else { return }
-//        print(double)
-//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

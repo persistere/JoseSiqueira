@@ -16,7 +16,6 @@ class EstadosManager {
     func loadEstados(with context: NSManagedObjectContext ) {
         let fetchRequest: NSFetchRequest<Estado> = Estado.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
-        
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         do {

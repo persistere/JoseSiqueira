@@ -24,7 +24,7 @@ class VisualizarProdutosViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         lbTitle.text = produto.title
-        
+        lbValor.text = String(produto.valor)
         
         if let image = produto.cover as? UIImage {
             ivCover.image = image

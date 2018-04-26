@@ -30,14 +30,7 @@ class ProdutosTableViewController: UITableViewController {
             if let produtos = fetchedResultController.fetchedObjects {
                 vc.produto = produtos[tableView.indexPathForSelectedRow!.row]
             }
-            
-            
         }
-        
-        if segue.identifier == "novoProdutoSegue" {
-            
-        }
-
     }
     
     func loadProdutos() {
@@ -61,8 +54,6 @@ class ProdutosTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = fetchedResultController.fetchedObjects?.count {
             tableView.backgroundView = (count == 0) ? label : nil
@@ -72,8 +63,6 @@ class ProdutosTableViewController: UITableViewController {
             return 0
         }
     }
-    
-    
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProdutosTableViewCell
@@ -132,7 +121,6 @@ class ProdutosTableViewController: UITableViewController {
     
 }
 
-
 extension ProdutosTableViewController: NSFetchedResultsControllerDelegate {
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject:
@@ -148,12 +136,4 @@ extension ProdutosTableViewController: NSFetchedResultsControllerDelegate {
                 tableView.reloadData()
         }
     }
-    
-//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        tableView.reloadData()
-//    }
-    
-    
-    
-    
 }
