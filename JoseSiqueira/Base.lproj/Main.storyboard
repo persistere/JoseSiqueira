@@ -286,42 +286,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cotação do dólar (R$)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-GX-Aa5">
-                                <rect key="frame" x="92" y="148" width="170" height="21"/>
+                                <rect key="frame" x="16" y="148" width="170" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-dP-9JK">
-                                <rect key="frame" x="82" y="177" width="191" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-nk-tCz">
-                                <rect key="frame" x="82" y="256" width="191" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3.2" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-dP-9JK">
+                                <rect key="frame" x="259" y="148" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="xvG-W7-2fG"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I.O.F (%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-WG-BVW">
-                                <rect key="frame" x="145" y="227" width="65" height="21"/>
+                                <rect key="frame" x="121" y="189" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6.38" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-nk-tCz">
+                                <rect key="frame" x="259" y="188" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="zd3-tU-HZ7"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lOv-dP-9JK" firstAttribute="leading" secondItem="1a7-nk-tCz" secondAttribute="leading" id="4Sw-ah-M5I"/>
-                            <constraint firstItem="1f2-WG-BVW" firstAttribute="centerX" secondItem="1a7-nk-tCz" secondAttribute="centerX" id="Hmt-ic-akZ"/>
-                            <constraint firstItem="hOb-GX-Aa5" firstAttribute="centerX" secondItem="lOv-dP-9JK" secondAttribute="centerX" id="IEj-I2-iRK"/>
-                            <constraint firstItem="lOv-dP-9JK" firstAttribute="trailing" secondItem="1a7-nk-tCz" secondAttribute="trailing" id="Kys-ST-Weq"/>
-                            <constraint firstItem="1a7-nk-tCz" firstAttribute="top" secondItem="1f2-WG-BVW" secondAttribute="bottom" constant="8" symbolic="YES" id="NDY-lP-rRL"/>
-                            <constraint firstItem="lOv-dP-9JK" firstAttribute="leading" secondItem="EgI-jX-Uos" secondAttribute="leading" constant="82" id="R6u-DX-NYD"/>
-                            <constraint firstItem="1f2-WG-BVW" firstAttribute="top" secondItem="lOv-dP-9JK" secondAttribute="bottom" constant="20" id="WLq-31-P5i"/>
-                            <constraint firstItem="hOb-GX-Aa5" firstAttribute="leading" secondItem="EgI-jX-Uos" secondAttribute="leading" constant="92" id="imG-um-jnw"/>
-                            <constraint firstItem="hOb-GX-Aa5" firstAttribute="top" secondItem="EgI-jX-Uos" secondAttribute="top" constant="32" id="mJB-i3-i4F"/>
-                            <constraint firstItem="lOv-dP-9JK" firstAttribute="top" secondItem="hOb-GX-Aa5" secondAttribute="bottom" constant="8" symbolic="YES" id="pUH-y2-ytD"/>
+                            <constraint firstItem="lOv-dP-9JK" firstAttribute="top" secondItem="EgI-jX-Uos" secondAttribute="top" constant="32" id="89c-En-0vT"/>
+                            <constraint firstItem="EgI-jX-Uos" firstAttribute="trailing" secondItem="lOv-dP-9JK" secondAttribute="trailing" constant="16" id="9ys-mA-LSv"/>
+                            <constraint firstItem="1a7-nk-tCz" firstAttribute="top" secondItem="lOv-dP-9JK" secondAttribute="bottom" constant="10" id="JoF-Rp-gMV"/>
+                            <constraint firstItem="1f2-WG-BVW" firstAttribute="top" secondItem="hOb-GX-Aa5" secondAttribute="bottom" constant="20" id="OnN-m1-Kg3"/>
+                            <constraint firstItem="hOb-GX-Aa5" firstAttribute="leading" secondItem="EgI-jX-Uos" secondAttribute="leading" constant="16" id="SHJ-Zz-H3g"/>
+                            <constraint firstItem="hOb-GX-Aa5" firstAttribute="top" secondItem="EgI-jX-Uos" secondAttribute="top" constant="32" id="XsR-Wj-A5C"/>
+                            <constraint firstItem="EgI-jX-Uos" firstAttribute="trailing" secondItem="1a7-nk-tCz" secondAttribute="trailing" constant="16" id="lP5-Jr-h9r"/>
+                            <constraint firstItem="1f2-WG-BVW" firstAttribute="leading" secondItem="EgI-jX-Uos" secondAttribute="leading" constant="121" id="yq8-ed-2e3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EgI-jX-Uos"/>
                     </view>
@@ -331,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSi-Uq-RYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5060" y="205"/>
+            <point key="canvasLocation" x="5060" y="204.64767616191907"/>
         </scene>
         <!--Ajustes-->
         <scene sceneID="gvB-C4-GKQ">
