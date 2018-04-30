@@ -7,29 +7,51 @@
 //
 
 import UIKit
+import CoreData
 
 class TotalCompraViewController: UIViewController {
 
+    @IBOutlet var lbTotalDolar: UILabel!
+    @IBOutlet var lbTotalReal: UILabel!
+    
+    var totalDolar: Double = 0
+    var totalReal: Double = 0
+    var impostoEstado: Double = 0
+    var dolar: Double = 3.2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        TotalDasCompras()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func TotalDasCompras() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Produto", in: self.context)
+        
+        fetchRequest.entity = entityDescription
+        
+        do {
+            let result = try self.context.fetch(fetchRequest)
+            
+            for element in result {
+                let produtos = element as! Produto
+                
+                totalDolar += Double(produtos.valor)
+                impostoEstado = Double((produtos.estado?.tax)!)
+                
+                totalReal = (totalDolar * dolar) + impostoEstado
+                
+            }
+
+        } catch {
+            let fetchError = error as NSError
+            print(fetchError)
+        }
+        
+        lbTotalDolar.text = String(format: "%.2f", totalDolar)
+        lbTotalReal.text = String(format: "%.2f", totalReal)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
