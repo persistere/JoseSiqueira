@@ -25,10 +25,16 @@ class AjustesViewController: UIViewController {
         tfDolar.text = UserDefaults.standard.string(forKey: "dollar")
         tfIof.text = UserDefaults.standard.string(forKey: "iof")
     }
+    
+    func save() {
+        UserDefaults.standard.set(tfDolar.text, forKey: "dollar")
+        UserDefaults.standard.set(tfIof.text, forKey: "iof")
+    }
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+        save()
     }
     
 }

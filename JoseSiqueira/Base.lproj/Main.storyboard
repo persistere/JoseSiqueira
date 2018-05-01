@@ -330,9 +330,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EgI-jX-Uos"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Ajustes" id="Qge-CP-c6o">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ti1-VX-he5"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Ajustes" id="Qge-CP-c6o"/>
                     <connections>
                         <outlet property="tfDolar" destination="lOv-dP-9JK" id="uI8-cM-fEB"/>
                         <outlet property="tfIof" destination="1a7-nk-tCz" id="Ybt-WK-qz6"/>
