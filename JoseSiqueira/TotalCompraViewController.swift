@@ -14,6 +14,9 @@ class TotalCompraViewController: UIViewController {
     @IBOutlet var lbTotalDolar: UILabel!
     @IBOutlet var lbTotalReal: UILabel!
     
+    var totalDolar: Double = 0
+    var totalReal: Double = 0
+    
     let config = Configuration.shared
     
     var dataSource: [Produto] = []
@@ -40,8 +43,11 @@ class TotalCompraViewController: UIViewController {
             }
         }
         
-        lbTotalReal.text = "\(results * Double(dolar!)!)"
-        lbTotalDolar.text = "\(results)"
+        totalDolar = results * Double(dolar!)!
+        totalReal = results
+        
+        lbTotalReal.text = String(format: "%.2f", totalReal)
+        lbTotalDolar.text = String(format: "%.2f", totalDolar)
     }
     
     func calculateStateTax(value: Double, tax: Double) -> Double {
@@ -63,57 +69,5 @@ class TotalCompraViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-    
-//    var totalDolar: Double = 0
-//    var totalReal: Double = 0
-//    var valorTaxaEstado: Double = 0
-//    var cartao = true
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        TotalDasCompras()
-//    }
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        loadLabels()
-//    }
-//
-//
-//    func TotalDasCompras() {
-//
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
-//        let entityDescription = NSEntityDescription.entity(forEntityName: "Produto", in: self.context)
-//
-//        fetchRequest.entity = entityDescription
-//
-//        do {
-//            let result = try self.context.fetch(fetchRequest)
-//
-//             for element in result {
-//                let produtos = element as! Produto
-//
-//                totalDolar += Double(produtos.valor)
-//                valorTaxaEstado = totalDolar * cc.taxaEstado/100
-//
-//                totalReal = totalDolar * cc.dolar + valorTaxaEstado
-//
-//                if(cartao == true) {
-//                    totalReal += cc.iof
-//                }
-//            }
-//
-//        } catch {
-//            let fetchError = error as NSError
-//            print(fetchError)
-//        }
-//
-//    }
-//
-//    func loadLabels() {
-//        lbTotalDolar.text = String(format: "%.2f", totalDolar)
-//        lbTotalReal.text = String(format: "%.2f", totalReal)
-//    }
     
 }
