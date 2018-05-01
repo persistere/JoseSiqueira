@@ -22,7 +22,7 @@ class AjustesViewController: UIViewController {
     }
     
     func formartView() {
-//        tfDolar.setValue(config.dollar, forKey: "dolar")
+//        tfDolar.setValue(config.dollar, forKey: "dollar")
 //        tfIof.setValue(config.iof, forKey: "iof")
     }
 

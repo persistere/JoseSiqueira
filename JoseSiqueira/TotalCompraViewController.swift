@@ -14,6 +14,7 @@ class TotalCompraViewController: UIViewController {
     @IBOutlet var lbTotalDolar: UILabel!
     @IBOutlet var lbTotalReal: UILabel!
     
+    let config = Configuration.shared
     
     var dataSource: [Produto] = []
     var format = NumberFormatter()
@@ -24,8 +25,8 @@ class TotalCompraViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadProdutos()
-        let dolar = 3.2 //UserDefaults.standard.string(forKey: "dollar")
-        let iof = 6.38 //UserDefaults.standard.string(forKey: "iof")
+        let dolar = UserDefaults.standard.string(forKey: "dollar")
+        let iof = UserDefaults.standard.string(forKey: "iof")
         
         var results = 0.0
         dataSource.forEach { (produto) in
@@ -33,13 +34,13 @@ class TotalCompraViewController: UIViewController {
                 var result = produto.valor + calculateStateTax(value: produto.valor, tax: estado.tax)
                 
                 if produto.cartao {
-                    result = result + calculateIOFValue(value: (result), iof: Double(iof))
+                    result = result + calculateIOFValue(value: (result), iof: Double(iof!)!)
                 }
                 results += result
             }
         }
         
-        lbTotalReal.text = "\(results * Double(dolar))"
+        lbTotalReal.text = "\(results * Double(dolar!)!)"
         lbTotalDolar.text = "\(results)"
     }
     
