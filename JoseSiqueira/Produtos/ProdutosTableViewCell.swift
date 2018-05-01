@@ -12,7 +12,6 @@ class ProdutosTableViewCell: UITableViewCell {
 
     @IBOutlet var ivCover: UIImageView!
     @IBOutlet var lbTitle: UILabel!
-    @IBOutlet var lbEstado: UILabel!
     @IBOutlet var lbValor: UILabel!
     
     

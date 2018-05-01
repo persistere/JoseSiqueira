@@ -16,14 +16,18 @@ class TotalCompraViewController: UIViewController {
     
     var totalDolar: Double = 0
     var totalReal: Double = 0
-    var impostoEstado: Double = 0
-    var dolar: Double = 3.2
+    var valorTaxaEstado: Double = 0
+    var cartao = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         TotalDasCompras()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        loadLabels()
+    }
     
     func TotalDasCompras() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
@@ -34,14 +38,17 @@ class TotalCompraViewController: UIViewController {
         do {
             let result = try self.context.fetch(fetchRequest)
             
-            for element in result {
+             for element in result {
                 let produtos = element as! Produto
                 
                 totalDolar += Double(produtos.valor)
-                impostoEstado = Double((produtos.estado?.tax)!)
+                valorTaxaEstado = totalDolar * cc.taxaEstado/100
                 
-                totalReal = (totalDolar * dolar) + impostoEstado
+                totalReal = totalDolar * cc.dolar + valorTaxaEstado
                 
+                if(cartao == true) {
+                    totalReal += cc.iof
+                }
             }
 
         } catch {
@@ -49,9 +56,11 @@ class TotalCompraViewController: UIViewController {
             print(fetchError)
         }
         
+    }
+    
+    func loadLabels() {
         lbTotalDolar.text = String(format: "%.2f", totalDolar)
         lbTotalReal.text = String(format: "%.2f", totalReal)
-        
     }
     
 }

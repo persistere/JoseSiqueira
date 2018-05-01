@@ -7,3 +7,39 @@
 //
 
 import Foundation
+
+enum UserDefaultsKeys: String {
+    case dollar = "dollar"
+    case iof = "iof"
+}
+
+class Configuration {
+    let defaults = UserDefaults.standard
+    static var shared: Configuration = Configuration()
+    
+    var dollar: Double {
+        get {
+            return defaults.double(forKey: UserDefaultsKeys.dollar.rawValue)
+        }
+        set {
+            defaults.set(newValue, forKey: UserDefaultsKeys.dollar.rawValue)
+        }
+    }
+    
+    var iof: Double {
+        get {
+            return defaults.double(forKey: UserDefaultsKeys.iof.rawValue)
+        }
+        set {
+            defaults.set(newValue, forKey: UserDefaultsKeys.iof.rawValue)
+        }
+    }
+    
+    private init(){
+        
+    }
+}
+
+
+
+

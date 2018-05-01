@@ -53,6 +53,8 @@ class EstadosTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: title, style: .default, handler: {
             (action) in let estado = estado ?? Estado(context: self.context)
             estado.title = alert.textFields?.first?.text
+            estado.tax = (Double((alert.textFields?[1].text)!))!
+            
             do {
                 try self.context.save()
                 self.loadEstados()
@@ -95,6 +97,7 @@ class EstadosTableViewController: UITableViewController {
 
         let estado = estadosManager.estados[indexPath.row]
         cell.textLabel?.text = estado.title
+        cell.detailTextLabel?.text  = String(estado.tax)
 
         return cell
     }

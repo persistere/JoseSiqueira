@@ -10,10 +10,20 @@ import UIKit
 
 class AjustesViewController: UIViewController {
 
+    @IBOutlet var tfDolar: UITextField!
+    @IBOutlet var tfIof: UITextField!
+    
+    let config = Configuration.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        formartView()
+    }
+    
+    func formartView() {
+//        tfDolar.setValue(config.dollar, forKey: "dolar")
+//        tfIof.setValue(config.iof, forKey: "iof")
     }
 
     override func didReceiveMemoryWarning() {

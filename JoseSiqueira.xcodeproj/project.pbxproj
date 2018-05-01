@@ -85,16 +85,16 @@
 				25E0B99620928B31006FF4C9 /* Produtos */,
 				254BCBE9208A6E700079915B /* AddEditViewController.swift */,
 				257C8B452087B23C00946E1F /* AppDelegate.swift */,
-				257C8B492087B23C00946E1F /* Main.storyboard */,
 				25E0B999209393B5006FF4C9 /* Configuration.swift */,
-				25E0B99B2093944B006FF4C9 /* Settings.bundle */,
 				25E0B98E2092599D006FF4C9 /* AjustesViewController.swift */,
 				25E0B99020925C0C006FF4C9 /* TotalCompraViewController.swift */,
 				25E0B99220925F2D006FF4C9 /* CalculoCompras.swift */,
 				257C8B4F2087B24000946E1F /* Assets.xcassets */,
+				257C8B492087B23C00946E1F /* Main.storyboard */,
 				257C8B512087B24000946E1F /* LaunchScreen.storyboard */,
 				257C8B542087B24000946E1F /* Info.plist */,
 				257C8B4C2087B23C00946E1F /* JoseSiqueira.xcdatamodeld */,
+				25E0B99B2093944B006FF4C9 /* Settings.bundle */,
 			);
 			path = JoseSiqueira;
 			sourceTree = "<group>";
