@@ -33,6 +33,7 @@ class AddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if produto != nil {
             title = "Editar Produto"
             btAddEdit.setTitle("ALTERAR", for: .normal)
@@ -51,6 +52,9 @@ class AddEditViewController: UIViewController {
             if produto.cover != nil {
                 btCover.setTitle(nil, for: .normal)
             }
+            
+            btAddEdit.isEnabled = true
+            btAddEdit.backgroundColor = .blue
         }
         
         prepareEstadosTextField()
