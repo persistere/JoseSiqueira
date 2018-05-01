@@ -16,6 +16,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet var btAddEdit: UIButton!
     @IBOutlet var tfEstado: UITextField!
     @IBOutlet var btCover: UIButton!
+    @IBOutlet var swCartao: UISwitch!
     
     var produto: Produto!
     var formatter = NumberFormatter()
@@ -40,6 +41,8 @@ class AddEditViewController: UIViewController {
             
             tfTitle.text = produto.title
             tfValor.text = String(produto.valor)
+            
+            swCartao.isOn = produto.cartao
  
             ivCover.image = produto.cover as? UIImage
 
@@ -137,6 +140,9 @@ class AddEditViewController: UIViewController {
         }
         
         produto.title = tfTitle.text
+        
+        produto.cartao = swCartao.isOn
+
         
         guard let valor = formatter.number(from: tfValor.text!)?.doubleValue else { return }
         produto.valor =  valor

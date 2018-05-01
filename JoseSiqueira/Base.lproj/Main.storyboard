@@ -268,6 +268,7 @@
                         <outlet property="btAddEdit" destination="DAb-4V-9dd" id="QxO-xs-5CW"/>
                         <outlet property="btCover" destination="5Pn-pC-xeG" id="KX7-50-1Qe"/>
                         <outlet property="ivCover" destination="sq8-U5-QkU" id="LC3-zg-9Lw"/>
+                        <outlet property="swCartao" destination="YHK-we-X85" id="Kaz-5Q-tHZ"/>
                         <outlet property="tfEstado" destination="5cC-bk-6cd" id="GET-I8-F04"/>
                         <outlet property="tfTitle" destination="Ogd-up-B2A" id="zKR-ly-Vo6"/>
                         <outlet property="tfValor" destination="LVI-Vc-24A" id="tdx-dv-XuM"/>
