@@ -34,6 +34,8 @@ class AddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btAddEdit.isEnabled = false
+        btAddEdit.alpha = 0.5
         
         if produto != nil {
             title = "Editar Produto"
@@ -129,15 +131,26 @@ class AddEditViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func validaCampos(erro: String) {
+        btAddEdit.isEnabled = false
+        btAddEdit.alpha = 0.5
+        let alert = UIAlertController(title: "Atenção", message: erro, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+        context.undo()
+        return
+    }
     
-
+    
     @IBAction func addEditProduto(_ sender: UIButton) {
-
+        
+        
         if produto == nil {
             produto = Produto(context: context)
         }
         
         produto.title = tfTitle.text
+
         
         guard let valor = formatter.number(from: tfValor.text!)?.doubleValue else { return }
         produto.valor =  valor
@@ -165,6 +178,11 @@ class AddEditViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+        
+        if let title = tfTitle.text, title.count > 0 {
+            btAddEdit.isEnabled = true
+            btAddEdit.alpha = 1
+        } else { validaCampos(erro: "O nome do produto de ser preenchido")}
     }
 }
 
