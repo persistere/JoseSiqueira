@@ -175,6 +175,10 @@
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift" translatesAutoresizingMaskIntoConstraints="NO" id="sq8-U5-QkU">
                                 <rect key="frame" x="25" y="142" width="320" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="TUE-y6-fcm"/>
+                                    <constraint firstAttribute="height" constant="143" id="p46-CG-Qmy"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Produto" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ogd-up-B2A">
                                 <rect key="frame" x="25" y="82" width="320" height="30"/>
