@@ -46,8 +46,8 @@ class TotalCompraViewController: UIViewController {
         totalDolar = results * Double(dolar!)!
         totalReal = results
         
-        lbTotalReal.text = String(format: "%.2f", totalReal)
-        lbTotalDolar.text = String(format: "%.2f", totalDolar)
+        lbTotalReal.text = String(format: "%.2f", totalDolar)
+        lbTotalDolar.text = String(format: "%.2f", totalReal)
     }
     
     func calculateStateTax(value: Double, tax: Double) -> Double {
