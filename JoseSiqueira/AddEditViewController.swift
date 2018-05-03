@@ -56,8 +56,6 @@ class AddEditViewController: UIViewController {
                 btCover.setTitle(nil, for: .normal)
             }
             
-            btAddEdit.isEnabled = true
-            btAddEdit.backgroundColor = .blue
         }
         
         prepareEstadosTextField()
