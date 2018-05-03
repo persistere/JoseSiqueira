@@ -56,6 +56,8 @@ class AddEditViewController: UIViewController {
                 btCover.setTitle(nil, for: .normal)
             }
             
+            btAddEdit.isEnabled = true
+            btAddEdit.backgroundColor = .blue
         }
         
         prepareEstadosTextField()
@@ -138,9 +140,6 @@ class AddEditViewController: UIViewController {
         }
         
         produto.title = tfTitle.text
-        
-        produto.cartao = swCartao.isOn
-
         
         guard let valor = formatter.number(from: tfValor.text!)?.doubleValue else { return }
         produto.valor =  valor

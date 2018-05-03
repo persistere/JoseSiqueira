@@ -9,11 +9,13 @@
 import UIKit
 
 class EstadosTableViewController: UITableViewController {
-
+    
+    var label = UILabel()
     var estadosManager = EstadosManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadEstados()
     }
     
@@ -43,8 +45,9 @@ class EstadosTableViewController: UITableViewController {
             }
         }
         
-        alert.addTextField {
-            (textField) in textField.placeholder = "Imposto"
+        alert.addTextField { (textField) in
+            textField.placeholder = "Imposto"
+            textField.keyboardType = .decimalPad
             if let tax = estado?.tax {
                 textField.text = String(tax)
             }
@@ -73,7 +76,18 @@ class EstadosTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return estadosManager.estados.count
+        
+        if(estadosManager.estados.count == 0) {
+            label.text = "Sua lista de estados está vazia"
+            label.textAlignment = .center
+            tableView.backgroundView = label
+            return 0
+        } else {
+            label.text = " "
+            tableView.backgroundView = label
+            return estadosManager.estados.count
+        }
+
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

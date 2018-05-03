@@ -46,6 +46,8 @@ class ProdutosTableViewController: UITableViewController {
         } catch {
             print(error.localizedDescription)
         }
+        
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,7 +71,6 @@ class ProdutosTableViewController: UITableViewController {
         
         guard let produto = fetchedResultController.fetchedObjects?[indexPath.row] else {
             return cell
-            
         }
         
         cell.prepare(with: produto)
