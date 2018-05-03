@@ -12,6 +12,7 @@ class EstadosTableViewController: UITableViewController {
     
     var label = UILabel()
     var estadosManager = EstadosManager.shared
+    var formatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,9 @@ class EstadosTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: title, style: .default, handler: {
             (action) in let estado = estado ?? Estado(context: self.context)
             estado.title = alert.textFields?.first?.text
-            estado.tax = (Double((alert.textFields?[1].text)!))!
+            
+            guard let valor = self.formatter.number(from: (alert.textFields?[1].text!)!)?.doubleValue else { return }
+            estado.tax = valor
             
             do {
                 try self.context.save()

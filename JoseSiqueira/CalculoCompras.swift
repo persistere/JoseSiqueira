@@ -10,18 +10,8 @@ import Foundation
 
 class  CalculoCompras {
     static let shared = CalculoCompras()
-    
-    var dolar: Double = 3.2
-    var iof: Double = 6.38
-    var taxaEstado: Double = 7
-    var totalCompra: Double = 0
-    
+        
     let formatter = NumberFormatter()
-    
-    var valorIof: Double {
-        return (totalCompra+taxaEstado) * iof/100
-    }
-    
     
     func convertToDouble(_ string: String) -> Double {
         formatter.numberStyle = .none
