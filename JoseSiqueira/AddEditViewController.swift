@@ -53,6 +53,7 @@ class AddEditViewController: UIViewController {
                 
                 pickerView.selectRow(index, inComponent: 0, animated: false)
             }
+            
 
             if produto.cover != nil {
                 btCover.setTitle(nil, for: .normal)
@@ -143,15 +144,12 @@ class AddEditViewController: UIViewController {
     
     
     @IBAction func addEditProduto(_ sender: UIButton) {
-        
-        
         if produto == nil {
             produto = Produto(context: context)
         }
         
         produto.title = tfTitle.text
 
-        
         guard let valor = formatter.number(from: tfValor.text!)?.doubleValue else { return }
         produto.valor =  valor
         
@@ -162,7 +160,8 @@ class AddEditViewController: UIViewController {
         
         produto.cover = ivCover.image
         
-        
+        produto.cartao = swCartao.isOn
+
         do {
             try context.save()
         } catch {
