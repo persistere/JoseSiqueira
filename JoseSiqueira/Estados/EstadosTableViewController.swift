@@ -38,7 +38,7 @@ class EstadosTableViewController: UITableViewController {
         
         let title = estado == nil ? "Adicionar " : "Editar "
         let alert = UIAlertController(title: title + "Estado", message: nil, preferredStyle: .alert )
-        
+
         alert.addTextField {
             (textField) in textField.placeholder = "Nome do Estado"
             if let name = estado?.title {
@@ -82,12 +82,13 @@ class EstadosTableViewController: UITableViewController {
             label.text = "Sua lista de estados está vazia"
             label.textAlignment = .center
             tableView.backgroundView = label
-            return 0
+            
         } else {
             label.text = " "
             tableView.backgroundView = label
-            return estadosManager.estados.count
         }
+        
+        return estadosManager.estados.count
 
     }
     
