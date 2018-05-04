@@ -182,6 +182,17 @@ class AddEditViewController: UIViewController {
             btAddEdit.isEnabled = true
             btAddEdit.alpha = 1
         } else { validaCampos(erro: "O nome do produto de ser preenchido")}
+        
+        if let estado = tfEstado.text, estado.count > 0 {
+            btAddEdit.isEnabled = true
+            btAddEdit.alpha = 1
+        } else { validaCampos(erro: "Voce deve selecionar um estado")}
+        
+        if let valor = tfValor.text, valor.count > 0 {
+            btAddEdit.isEnabled = true
+            btAddEdit.alpha = 1
+        } else { validaCampos(erro: "Voce inserir um valor")}
+        
     }
 }
 
