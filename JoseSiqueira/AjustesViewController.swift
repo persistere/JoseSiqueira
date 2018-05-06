@@ -14,7 +14,8 @@ class AjustesViewController: UIViewController {
     @IBOutlet var tfIof: UITextField!
     
     let config = Configuration.shared
-    
+    var formatter = NumberFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
